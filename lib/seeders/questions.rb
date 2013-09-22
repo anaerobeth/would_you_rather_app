@@ -11,7 +11,9 @@ module Seeders
             option = question.options.build({content: option})
             question.options << option
           end
-
+          if Question.find_by(description: question.description).nil?
+            question.save!
+          end
         end
       end
 
