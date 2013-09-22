@@ -12,7 +12,9 @@ class Question < ActiveRecord::Base
 
   class << self
     def most_active
-
+      self.all.max do |question|
+        question.votes.count
+      end
     end
   end
 
