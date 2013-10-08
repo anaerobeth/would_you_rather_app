@@ -12,6 +12,7 @@ module Seeders
             question.options << option
           end
 
+          question.save! if Question.find_by(description: question.description).nil?
         end
       end
 
