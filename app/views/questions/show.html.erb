@@ -9,7 +9,7 @@ Would you rather
   <%= 'OR' if index < @question.options.count - 1 %>
 <% end %>
 
-
+<%= "#{pluralize(@question.votes.count, 'total vote')} submitted" %>
 <% @question.options.each do |option| %>
   <%= "#{option.content} was chosen #{option.chosen_percentage}% of the time" %>
 <% end %>
